@@ -14,11 +14,4 @@ GROUP BY
 ORDER BY
     nb_fans DESC;
 
---Retrieve the results 
-SELECT
-    *
-FROM
-    tmp_results;
-
---Drop the temporary table
 DROP TEMPORARY TABLE IF EXISTS tmp_results;
