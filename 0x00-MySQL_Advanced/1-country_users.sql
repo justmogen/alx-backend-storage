@@ -1,3 +1,4 @@
+-- A table with email,name and country using 'enum'
 CREATE TABLE
     IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
