@@ -13,5 +13,3 @@ GROUP BY
     origin
 ORDER BY
     nb_fans DESC;
-
-DROP TEMPORARY TABLE IF EXISTS tmp_results;
