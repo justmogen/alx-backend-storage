@@ -1,7 +1,7 @@
 --Glam rock style
 SELECT
     band_name,
-    IFNULL (YEAR ('2022-01-01') - YEAR (born), 0) + IFNULL (YEAR ('2022-01-01') - YEAR (disbanded), 0) AS lifespan
+    IFNULL (2022 - SUBSTRING_INDEX (formed, '-', 1), 0) + IFNULL (2022 - SUBSTRING_INDEX (split, '-', 1), 0) AS lifespan
 FROM
     metal_bands
 WHERE
