@@ -1,10 +1,24 @@
---Group by country and order by no. of fans
+--Create a temporary table to store the results
+CREATE TEMPORARY TABLE tmp_results (origin VARCHAR(255), nb_fans INT);
+
+--Calculate the number of non-unique fans for each country origin and rank them
+INSERT INTO
+    tmp_results (origin, nb_fans)
 SELECT
     origin,
-    SUM(nb_fans) as nb_fans
+    COUNT(DISTINCT band_name) as nb_fans
 FROM
     metal_bands
 GROUP BY
     origin
 ORDER BY
     nb_fans DESC;
+
+--Retrieve the results 
+SELECT
+    *
+FROM
+    tmp_results;
+
+--Drop the temporary table
+DROP TEMPORARY TABLE IF EXISTS tmp_results;
