@@ -1,11 +1,7 @@
 --Glam rock style
 SELECT
     band_name,
-    CASE
-        WHEN formed = 0
-        OR split = 0 THEN 0
-        ELSE 2022 - GREATEST(formed, split)
-    END AS lifespan
+    IFNULL (YEAR ('2022-01-01') - YEAR (born), 0) + IFNULL (YEAR ('2022-01-01') - YEAR (disbanded), 0) AS lifespan
 FROM
     metal_bands
 WHERE
