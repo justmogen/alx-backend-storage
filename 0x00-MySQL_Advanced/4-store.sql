@@ -1,3 +1,4 @@
+--store updated items using trigger
 DELIMITER //
 
 CREATE TRIGGER decrease_quantity_after_order
